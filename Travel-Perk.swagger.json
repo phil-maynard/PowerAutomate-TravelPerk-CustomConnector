@@ -1082,6 +1082,140 @@
         }
       }
     },
+    "/users": {
+      "get": {
+        "summary": "List Users",
+        "description": "List Users",
+        "operationId": "ListUsers",
+        "parameters": [
+          {
+            "name": "trip_id",
+            "in": "query",
+            "type": "string",
+            "required": false,
+            "x-ms-visibility": "important"
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "type": "string",
+            "required": false,
+            "x-ms-visibility": "important"
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "type": "string",
+            "required": false,
+            "x-ms-visibility": "important"
+          },
+          {
+            "name": "Api-Version",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "default": "1",
+            "description": "Api-Version"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "users": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "description": "id"
+                      },
+                      "user_name": {
+                        "type": "string",
+                        "description": "user_name"
+                      },
+                      "name": {
+                        "type": "object",
+                        "properties": {
+                          "last_name": {
+                            "type": "string",
+                            "description": "last_name"
+                          },
+                          "first_name": {
+                            "type": "string",
+                            "description": "first_name"
+                          },
+                          "middle_name": {
+                            "type": "string",
+                            "description": "middle_name"
+                          },
+                          "title": {
+                            "type": "string",
+                            "description": "title"
+                          }
+                        },
+                        "description": "name"
+                      },
+                      "preferred_language": {
+                        "type": "string",
+                        "description": "preferred_language"
+                      },
+                      "locale": {
+                        "type": "string",
+                        "description": "locale"
+                      },
+                      "active": {
+                        "type": "boolean",
+                        "description": "active"
+                      },
+                      "job_title": {
+                        "type": "string",
+                        "description": "job_title"
+                      },
+                      "phone_numbers": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        },
+                        "description": "phone_numbers"
+                      },
+                      "emergency_contact": {
+                        "type": "string",
+                        "description": "emergency_contact"
+                      },
+                      "email": {
+                        "type": "string",
+                        "description": "email"
+                      }
+                    }
+                  },
+                  "description": "users"
+                },
+                "limit": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "limit"
+                },
+                "offset": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "offset"
+                },
+                "total": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "total"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/Users/%7B%7BUserId%7D%7D": {},
     "/suppliers": {
       "get": {
         "summary": "List Suppliers",
@@ -1109,6 +1243,27 @@
             "type": "string",
             "default": "1",
             "description": "Api-Version"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {}
+          }
+        }
+      }
+    },
+    "/Users/{UserId}": {
+      "get": {
+        "summary": "Retrieve User",
+        "description": "Retrieve User",
+        "operationId": "RetrieveUser",
+        "parameters": [
+          {
+            "name": "UserId",
+            "in": "path",
+            "required": true,
+            "type": "string"
           }
         ],
         "responses": {

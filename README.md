@@ -3,6 +3,8 @@ A Power Automate custom connector for Power Automate
 
 This is a basic Power Automate connector to provide Oauth conenction to a test Travel Perk integration with **Sandbox** environments.
 
+This connector is only for testing purposes, is not fully tested, and only contains the basic information to get going.
+
 The connector was created from the Travel Perk Postman colelction:
 
 - https://developers.travelperk.com/docs/postman-collection

@@ -3,7 +3,7 @@
   "info": {
     "version": "1.0.0",
     "title": "Travelperk API",
-    "description": "A custom Oauth Power Automate connector for Travel Perk"
+    "description": "A custom Oauth Power Automate connector for Travel Perk Sandbox environments"
   },
   "host": "api.sandbox-travelperk.com",
   "basePath": "/",

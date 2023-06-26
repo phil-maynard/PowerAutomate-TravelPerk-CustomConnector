@@ -1012,7 +1012,87 @@
         "responses": {
           "default": {
             "description": "default",
-            "schema": {}
+            "schema": {
+              "type": "object",
+              "properties": {
+                "trips": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "description": "id"
+                      },
+                      "trip_name": {
+                        "type": "string",
+                        "description": "trip_name"
+                      },
+                      "start": {
+                        "type": "string",
+                        "description": "start"
+                      },
+                      "start_datetime_utc": {
+                        "type": "string",
+                        "description": "start_datetime_utc"
+                      },
+                      "start_datetime_local": {
+                        "type": "string",
+                        "description": "start_datetime_local"
+                      },
+                      "end": {
+                        "type": "string",
+                        "description": "end"
+                      },
+                      "end_datetime_utc": {
+                        "type": "string",
+                        "description": "end_datetime_utc"
+                      },
+                      "end_datetime_local": {
+                        "type": "string",
+                        "description": "end_datetime_local"
+                      },
+                      "status": {
+                        "type": "string",
+                        "description": "status"
+                      },
+                      "modified": {
+                        "type": "string",
+                        "description": "modified"
+                      },
+                      "start_location": {
+                        "type": "string",
+                        "description": "start_location"
+                      },
+                      "end_location": {
+                        "type": "string",
+                        "description": "end_location"
+                      },
+                      "booker_id": {
+                        "type": "string",
+                        "description": "booker_id"
+                      }
+                    }
+                  },
+                  "description": "trips"
+                },
+                "limit": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "limit"
+                },
+                "offset": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "offset"
+                },
+                "total": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "total"
+                }
+              }
+            }
           }
         }
       }
@@ -1077,7 +1157,182 @@
         "responses": {
           "default": {
             "description": "default",
-            "schema": {}
+            "schema": {
+              "type": "object",
+              "properties": {
+                "bookings": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "description": "id"
+                      },
+                      "start": {
+                        "type": "string",
+                        "description": "start"
+                      },
+                      "end": {
+                        "type": "string",
+                        "description": "end"
+                      },
+                      "type": {
+                        "type": "string",
+                        "description": "type"
+                      },
+                      "status": {
+                        "type": "string",
+                        "description": "status"
+                      },
+                      "modified": {
+                        "type": "string",
+                        "description": "modified"
+                      },
+                      "trip_id": {
+                        "type": "string",
+                        "description": "trip_id"
+                      },
+                      "references": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "description": "type"
+                            },
+                            "value": {
+                              "type": "string",
+                              "description": "value"
+                            }
+                          }
+                        },
+                        "description": "references"
+                      },
+                      "location": {
+                        "type": "string",
+                        "description": "location"
+                      },
+                      "drop_off_location": {
+                        "type": "string",
+                        "description": "drop_off_location"
+                      },
+                      "legs": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "segments": {
+                              "type": "array",
+                              "items": {
+                                "type": "object",
+                                "properties": {
+                                  "origin": {
+                                    "type": "object",
+                                    "properties": {
+                                      "location": {
+                                        "type": "object",
+                                        "properties": {
+                                          "name": {
+                                            "type": "string",
+                                            "description": "name"
+                                          },
+                                          "address": {
+                                            "type": "string",
+                                            "description": "address"
+                                          },
+                                          "latitude": {
+                                            "type": "string",
+                                            "description": "latitude"
+                                          },
+                                          "longitude": {
+                                            "type": "string",
+                                            "description": "longitude"
+                                          },
+                                          "iata_code": {
+                                            "type": "string",
+                                            "description": "iata_code"
+                                          }
+                                        },
+                                        "description": "location"
+                                      },
+                                      "time": {
+                                        "type": "string",
+                                        "description": "time"
+                                      }
+                                    },
+                                    "description": "origin"
+                                  },
+                                  "destination": {
+                                    "type": "object",
+                                    "properties": {
+                                      "location": {
+                                        "type": "object",
+                                        "properties": {
+                                          "name": {
+                                            "type": "string",
+                                            "description": "name"
+                                          },
+                                          "address": {
+                                            "type": "string",
+                                            "description": "address"
+                                          },
+                                          "latitude": {
+                                            "type": "string",
+                                            "description": "latitude"
+                                          },
+                                          "longitude": {
+                                            "type": "string",
+                                            "description": "longitude"
+                                          },
+                                          "iata_code": {
+                                            "type": "string",
+                                            "description": "iata_code"
+                                          }
+                                        },
+                                        "description": "location"
+                                      },
+                                      "time": {
+                                        "type": "string",
+                                        "description": "time"
+                                      }
+                                    },
+                                    "description": "destination"
+                                  },
+                                  "external_id": {
+                                    "type": "string",
+                                    "description": "external_id"
+                                  }
+                                }
+                              },
+                              "description": "segments"
+                            }
+                          }
+                        },
+                        "description": "legs"
+                      }
+                    }
+                  },
+                  "description": "bookings"
+                },
+                "limit": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "limit"
+                },
+                "offset": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "offset"
+                },
+                "total": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "total"
+                }
+              }
+            }
           }
         }
       }
@@ -1248,7 +1503,50 @@
         "responses": {
           "default": {
             "description": "default",
-            "schema": {}
+            "schema": {
+              "type": "object",
+              "properties": {
+                "suppliers": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "description": "id"
+                      },
+                      "name": {
+                        "type": "string",
+                        "description": "name"
+                      },
+                      "bookings": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        },
+                        "description": "bookings"
+                      }
+                    }
+                  },
+                  "description": "suppliers"
+                },
+                "limit": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "limit"
+                },
+                "offset": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "offset"
+                },
+                "total": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "total"
+                }
+              }
+            }
           }
         }
       }
@@ -1269,7 +1567,72 @@
         "responses": {
           "default": {
             "description": "default",
-            "schema": {}
+            "schema": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "description": "id"
+                },
+                "user_name": {
+                  "type": "string",
+                  "description": "user_name"
+                },
+                "name": {
+                  "type": "object",
+                  "properties": {
+                    "last_name": {
+                      "type": "string",
+                      "description": "last_name"
+                    },
+                    "first_name": {
+                      "type": "string",
+                      "description": "first_name"
+                    },
+                    "middle_name": {
+                      "type": "string",
+                      "description": "middle_name"
+                    },
+                    "title": {
+                      "type": "string",
+                      "description": "title"
+                    }
+                  },
+                  "description": "name"
+                },
+                "preferred_language": {
+                  "type": "string",
+                  "description": "preferred_language"
+                },
+                "locale": {
+                  "type": "string",
+                  "description": "locale"
+                },
+                "active": {
+                  "type": "boolean",
+                  "description": "active"
+                },
+                "job_title": {
+                  "type": "string",
+                  "description": "job_title"
+                },
+                "phone_numbers": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  },
+                  "description": "phone_numbers"
+                },
+                "emergency_contact": {
+                  "type": "string",
+                  "description": "emergency_contact"
+                },
+                "email": {
+                  "type": "string",
+                  "description": "email"
+                }
+              }
+            }
           }
         }
       }

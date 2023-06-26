@@ -3,7 +3,7 @@
   "info": {
     "version": "1.0.0",
     "title": "Travelperk API",
-    "description": "Contact Support:\n Name: Open API squad"
+    "description": "A custom Oauth Power Automate connector for Travel Perk"
   },
   "host": "api.sandbox-travelperk.com",
   "basePath": "/",

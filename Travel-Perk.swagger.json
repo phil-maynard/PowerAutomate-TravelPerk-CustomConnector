@@ -1,0 +1,1145 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Travelperk API",
+    "description": "Contact Support:\n Name: Open API squad"
+  },
+  "host": "api.sandbox-travelperk.com",
+  "basePath": "/",
+  "schemes": [
+    "https"
+  ],
+  "consumes": [],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/invoices": {
+      "get": {
+        "summary": "List invoices",
+        "description": "List all invoices",
+        "operationId": "ListInvoices",
+        "parameters": [
+          {
+            "name": "Api-Version",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "default": "{{apiVersion}}",
+            "description": "Api-Version"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "offset": {
+                  "type": "string",
+                  "description": "offset"
+                },
+                "limit": {
+                  "type": "string",
+                  "description": "limit"
+                },
+                "total": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "total"
+                },
+                "invoices": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "serial_number": {
+                        "type": "string",
+                        "description": "serial_number"
+                      },
+                      "profile_id": {
+                        "type": "string",
+                        "description": "profile_id"
+                      },
+                      "profile_name": {
+                        "type": "string",
+                        "description": "profile_name"
+                      },
+                      "billing_information": {
+                        "type": "object",
+                        "properties": {
+                          "legal_name": {
+                            "type": "string",
+                            "description": "legal_name"
+                          },
+                          "vat_number": {
+                            "type": "string",
+                            "description": "vat_number"
+                          },
+                          "address_line_1": {
+                            "type": "string",
+                            "description": "address_line_1"
+                          },
+                          "address_line_2": {
+                            "type": "string",
+                            "description": "address_line_2"
+                          },
+                          "city": {
+                            "type": "string",
+                            "description": "city"
+                          },
+                          "postal_code": {
+                            "type": "string",
+                            "description": "postal_code"
+                          },
+                          "country_name": {
+                            "type": "string",
+                            "description": "country_name"
+                          }
+                        },
+                        "description": "billing_information"
+                      },
+                      "tk_billing_address": {
+                        "type": "object",
+                        "properties": {
+                          "legal_name": {
+                            "type": "string",
+                            "description": "legal_name"
+                          },
+                          "vat_number": {
+                            "type": "string",
+                            "description": "vat_number"
+                          },
+                          "address_line_1": {
+                            "type": "string",
+                            "description": "address_line_1"
+                          },
+                          "address_line_2": {
+                            "type": "string",
+                            "description": "address_line_2"
+                          },
+                          "city": {
+                            "type": "string",
+                            "description": "city"
+                          },
+                          "postal_code": {
+                            "type": "string",
+                            "description": "postal_code"
+                          },
+                          "country_name": {
+                            "type": "string",
+                            "description": "country_name"
+                          }
+                        },
+                        "description": "tk_billing_address"
+                      },
+                      "mode": {
+                        "type": "string",
+                        "description": "mode"
+                      },
+                      "status": {
+                        "type": "string",
+                        "description": "status"
+                      },
+                      "issuing_date": {
+                        "type": "string",
+                        "description": "issuing_date"
+                      },
+                      "billing_period": {
+                        "type": "string",
+                        "description": "billing_period"
+                      },
+                      "from_date": {
+                        "type": "string",
+                        "description": "from_date"
+                      },
+                      "to_date": {
+                        "type": "string",
+                        "description": "to_date"
+                      },
+                      "due_date": {
+                        "type": "string",
+                        "description": "due_date"
+                      },
+                      "currency": {
+                        "type": "string",
+                        "description": "currency"
+                      },
+                      "currency_tk": {
+                        "type": "string",
+                        "description": "currency_tk"
+                      },
+                      "total": {
+                        "type": "string",
+                        "description": "total"
+                      },
+                      "total_tk": {
+                        "type": "string",
+                        "description": "total_tk"
+                      },
+                      "lines": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "expense_date": {
+                              "type": "string",
+                              "description": "expense_date"
+                            },
+                            "description": {
+                              "type": "string",
+                              "description": "description"
+                            },
+                            "quantity": {
+                              "type": "integer",
+                              "format": "int32",
+                              "description": "quantity"
+                            },
+                            "unit_price": {
+                              "type": "string",
+                              "description": "unit_price"
+                            },
+                            "non_taxable_unit_price": {
+                              "type": "string",
+                              "description": "non_taxable_unit_price"
+                            },
+                            "tax_percentage": {
+                              "type": "string",
+                              "description": "tax_percentage"
+                            },
+                            "tax_amount": {
+                              "type": "string",
+                              "description": "tax_amount"
+                            },
+                            "tax_regime": {
+                              "type": "string",
+                              "description": "tax_regime"
+                            },
+                            "total_amount": {
+                              "type": "string",
+                              "description": "total_amount"
+                            },
+                            "metadata": {
+                              "type": "string",
+                              "description": "metadata"
+                            },
+                            "related_item_id": {
+                              "type": "string",
+                              "description": "related_item_id"
+                            }
+                          }
+                        },
+                        "description": "lines"
+                      },
+                      "taxes_summary": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "tax_regime": {
+                              "type": "string",
+                              "description": "tax_regime"
+                            },
+                            "subtotal": {
+                              "type": "string",
+                              "description": "subtotal"
+                            },
+                            "tax_percentage": {
+                              "type": "string",
+                              "description": "tax_percentage"
+                            },
+                            "tax_amount": {
+                              "type": "integer",
+                              "format": "int32",
+                              "description": "tax_amount"
+                            },
+                            "total": {
+                              "type": "string",
+                              "description": "total"
+                            }
+                          }
+                        },
+                        "description": "taxes_summary"
+                      },
+                      "reference": {
+                        "type": "string",
+                        "description": "reference"
+                      },
+                      "tk_bank_account": {
+                        "type": "object",
+                        "properties": {
+                          "name": {
+                            "type": "string",
+                            "description": "name"
+                          },
+                          "bank_name": {
+                            "type": "string",
+                            "description": "bank_name"
+                          },
+                          "account_number": {
+                            "type": "string",
+                            "description": "account_number"
+                          },
+                          "bic": {
+                            "type": "string",
+                            "description": "bic"
+                          },
+                          "reference": {
+                            "type": "string",
+                            "description": "reference"
+                          }
+                        },
+                        "description": "tk_bank_account"
+                      },
+                      "pdf": {
+                        "type": "string",
+                        "description": "pdf"
+                      }
+                    }
+                  },
+                  "description": "invoices"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/invoices/lines": {
+      "get": {
+        "summary": "List invoice lines",
+        "description": "List all invoice lines",
+        "operationId": "ListInvoiceLines",
+        "parameters": [
+          {
+            "name": "profile_id",
+            "default": "",
+            "in": "query",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "serial_number",
+            "default": "",
+            "in": "query",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "serial_number_contains",
+            "default": "",
+            "in": "query",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "billing_period",
+            "default": "",
+            "in": "query",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "travelperk_bank_account_number",
+            "default": "",
+            "in": "query",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "status",
+            "default": "",
+            "in": "query",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "issuing_date_gte",
+            "default": "",
+            "in": "query",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "issuing_date_lte",
+            "default": "",
+            "in": "query",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "due_date_gte",
+            "default": "",
+            "in": "query",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "due_date_lte",
+            "default": "",
+            "in": "query",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "expense_date_gte",
+            "default": "",
+            "in": "query",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "expense_date_lte",
+            "default": "",
+            "in": "query",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "limit",
+            "default": "",
+            "in": "query",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "offset",
+            "default": "",
+            "in": "query",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "Api-Version",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "default": "{{apiVersion}}",
+            "description": "Api-Version"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "offset": {
+                  "type": "string",
+                  "description": "offset"
+                },
+                "limit": {
+                  "type": "string",
+                  "description": "limit"
+                },
+                "total": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "total"
+                },
+                "invoice_lines": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "expense_date": {
+                        "type": "string",
+                        "description": "expense_date"
+                      },
+                      "description": {
+                        "type": "string",
+                        "description": "description"
+                      },
+                      "quantity": {
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "quantity"
+                      },
+                      "unit_price": {
+                        "type": "string",
+                        "description": "unit_price"
+                      },
+                      "non_taxable_unit_price": {
+                        "type": "string",
+                        "description": "non_taxable_unit_price"
+                      },
+                      "tax_percentage": {
+                        "type": "string",
+                        "description": "tax_percentage"
+                      },
+                      "tax_amount": {
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "tax_amount"
+                      },
+                      "tax_regime": {
+                        "type": "string",
+                        "description": "tax_regime"
+                      },
+                      "total_amount": {
+                        "type": "string",
+                        "description": "total_amount"
+                      },
+                      "metadata": {
+                        "type": "string",
+                        "description": "metadata"
+                      },
+                      "related_item_id": {
+                        "type": "string",
+                        "description": "related_item_id"
+                      },
+                      "invoice_serial_number": {
+                        "type": "string",
+                        "description": "invoice_serial_number"
+                      },
+                      "profile_id": {
+                        "type": "string",
+                        "description": "profile_id"
+                      },
+                      "profile_name": {
+                        "type": "string",
+                        "description": "profile_name"
+                      },
+                      "invoice_mode": {
+                        "type": "string",
+                        "description": "invoice_mode"
+                      },
+                      "invoice_status": {
+                        "type": "string",
+                        "description": "invoice_status"
+                      },
+                      "issuing_date": {
+                        "type": "string",
+                        "description": "issuing_date"
+                      },
+                      "due_date": {
+                        "type": "string",
+                        "description": "due_date"
+                      },
+                      "currency": {
+                        "type": "string",
+                        "description": "currency"
+                      }
+                    }
+                  },
+                  "description": "invoice_lines"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/profiles": {
+      "get": {
+        "summary": "List invoice profiles",
+        "description": "List all invoice profiles associated to this account",
+        "operationId": "ListInvoiceProfiles",
+        "parameters": [
+          {
+            "name": "limit",
+            "default": "",
+            "in": "query",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "offset",
+            "default": "",
+            "in": "query",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "Api-Version",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "default": "{{apiVersion}}",
+            "description": "Api-Version"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "offset": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "offset"
+                },
+                "limit": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "limit"
+                },
+                "total": {
+                  "type": "integer",
+                  "format": "int32",
+                  "description": "total"
+                },
+                "profiles": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "description": "id"
+                      },
+                      "name": {
+                        "type": "string",
+                        "description": "name"
+                      },
+                      "payment_method_type": {
+                        "type": "string",
+                        "description": "payment_method_type"
+                      },
+                      "billing_period": {
+                        "type": "string",
+                        "description": "billing_period"
+                      },
+                      "currency": {
+                        "type": "string",
+                        "description": "currency"
+                      },
+                      "billing_information": {
+                        "type": "object",
+                        "properties": {
+                          "legal_name": {
+                            "type": "string",
+                            "description": "legal_name"
+                          },
+                          "vat_number": {
+                            "type": "string",
+                            "description": "vat_number"
+                          },
+                          "address_line_1": {
+                            "type": "string",
+                            "description": "address_line_1"
+                          },
+                          "address_line_2": {
+                            "type": "string",
+                            "description": "address_line_2"
+                          },
+                          "city": {
+                            "type": "string",
+                            "description": "city"
+                          },
+                          "postal_code": {
+                            "type": "string",
+                            "description": "postal_code"
+                          },
+                          "country_name": {
+                            "type": "string",
+                            "description": "country_name"
+                          }
+                        },
+                        "description": "billing_information"
+                      }
+                    }
+                  },
+                  "description": "profiles"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/invoices/{serial_number}": {
+      "get": {
+        "summary": "Retrieve an invoice",
+        "description": "Get invoice detail",
+        "operationId": "RetrieveAnInvoice",
+        "parameters": [
+          {
+            "name": "serial_number",
+            "default": "ADD_INVOICE_NUMBER",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "Api-Version",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "default": "{{apiVersion}}",
+            "description": "Api-Version"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "serial_number": {
+                  "type": "string",
+                  "description": "serial_number"
+                },
+                "profile_id": {
+                  "type": "string",
+                  "description": "profile_id"
+                },
+                "profile_name": {
+                  "type": "string",
+                  "description": "profile_name"
+                },
+                "billing_information": {
+                  "type": "object",
+                  "properties": {
+                    "legal_name": {
+                      "type": "string",
+                      "description": "legal_name"
+                    },
+                    "vat_number": {
+                      "type": "string",
+                      "description": "vat_number"
+                    },
+                    "address_line_1": {
+                      "type": "string",
+                      "description": "address_line_1"
+                    },
+                    "address_line_2": {
+                      "type": "string",
+                      "description": "address_line_2"
+                    },
+                    "city": {
+                      "type": "string",
+                      "description": "city"
+                    },
+                    "postal_code": {
+                      "type": "string",
+                      "description": "postal_code"
+                    },
+                    "country_name": {
+                      "type": "string",
+                      "description": "country_name"
+                    }
+                  },
+                  "description": "billing_information"
+                },
+                "tk_billing_address": {
+                  "type": "object",
+                  "properties": {
+                    "legal_name": {
+                      "type": "string",
+                      "description": "legal_name"
+                    },
+                    "vat_number": {
+                      "type": "string",
+                      "description": "vat_number"
+                    },
+                    "address_line_1": {
+                      "type": "string",
+                      "description": "address_line_1"
+                    },
+                    "address_line_2": {
+                      "type": "string",
+                      "description": "address_line_2"
+                    },
+                    "city": {
+                      "type": "string",
+                      "description": "city"
+                    },
+                    "postal_code": {
+                      "type": "string",
+                      "description": "postal_code"
+                    },
+                    "country_name": {
+                      "type": "string",
+                      "description": "country_name"
+                    }
+                  },
+                  "description": "tk_billing_address"
+                },
+                "mode": {
+                  "type": "string",
+                  "description": "mode"
+                },
+                "status": {
+                  "type": "string",
+                  "description": "status"
+                },
+                "issuing_date": {
+                  "type": "string",
+                  "description": "issuing_date"
+                },
+                "billing_period": {
+                  "type": "string",
+                  "description": "billing_period"
+                },
+                "from_date": {
+                  "type": "string",
+                  "description": "from_date"
+                },
+                "to_date": {
+                  "type": "string",
+                  "description": "to_date"
+                },
+                "due_date": {
+                  "type": "string",
+                  "description": "due_date"
+                },
+                "currency": {
+                  "type": "string",
+                  "description": "currency"
+                },
+                "currency_tk": {
+                  "type": "string",
+                  "description": "currency_tk"
+                },
+                "total": {
+                  "type": "string",
+                  "description": "total"
+                },
+                "total_tk": {
+                  "type": "string",
+                  "description": "total_tk"
+                },
+                "lines": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "expense_date": {
+                        "type": "string",
+                        "description": "expense_date"
+                      },
+                      "description": {
+                        "type": "string",
+                        "description": "description"
+                      },
+                      "quantity": {
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "quantity"
+                      },
+                      "unit_price": {
+                        "type": "string",
+                        "description": "unit_price"
+                      },
+                      "non_taxable_unit_price": {
+                        "type": "string",
+                        "description": "non_taxable_unit_price"
+                      },
+                      "tax_percentage": {
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "tax_percentage"
+                      },
+                      "tax_amount": {
+                        "type": "integer",
+                        "format": "int32",
+                        "description": "tax_amount"
+                      },
+                      "tax_regime": {
+                        "type": "string",
+                        "description": "tax_regime"
+                      },
+                      "total_amount": {
+                        "type": "string",
+                        "description": "total_amount"
+                      },
+                      "metadata": {
+                        "type": "string",
+                        "description": "metadata"
+                      },
+                      "related_item_id": {
+                        "type": "string",
+                        "description": "related_item_id"
+                      }
+                    }
+                  },
+                  "description": "lines"
+                },
+                "taxes_summary": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "tax_regime": {
+                        "type": "string",
+                        "description": "tax_regime"
+                      },
+                      "subtotal": {
+                        "type": "string",
+                        "description": "subtotal"
+                      },
+                      "tax_percentage": {
+                        "type": "string",
+                        "description": "tax_percentage"
+                      },
+                      "tax_amount": {
+                        "type": "string",
+                        "description": "tax_amount"
+                      },
+                      "total": {
+                        "type": "string",
+                        "description": "total"
+                      }
+                    }
+                  },
+                  "description": "taxes_summary"
+                },
+                "reference": {
+                  "type": "string",
+                  "description": "reference"
+                },
+                "tk_bank_account": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "description": "name"
+                    },
+                    "bank_name": {
+                      "type": "string",
+                      "description": "bank_name"
+                    },
+                    "account_number": {
+                      "type": "string",
+                      "description": "account_number"
+                    },
+                    "bic": {
+                      "type": "string",
+                      "description": "bic"
+                    },
+                    "reference": {
+                      "type": "string",
+                      "description": "reference"
+                    }
+                  },
+                  "description": "tk_bank_account"
+                },
+                "pdf": {
+                  "type": "string",
+                  "description": "pdf"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/invoices/{serial_number}/pdf": {
+      "get": {
+        "summary": "Retrieve invoice PDF",
+        "description": "Download invoice in PDF format",
+        "operationId": "RetrieveInvoicePdf",
+        "parameters": [
+          {
+            "name": "serial_number",
+            "default": "ADD_INVOICE_NUMBER",
+            "in": "path",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "Api-Version",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "default": "{{apiVersion}}",
+            "description": "Api-Version"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200",
+            "schema": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "/trips": {
+      "get": {
+        "summary": "List Trips",
+        "description": "List Trips",
+        "operationId": "ListTrips",
+        "parameters": [
+          {
+            "name": "modified_gte",
+            "default": "",
+            "in": "query",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "modified_lt",
+            "default": "",
+            "in": "query",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "status",
+            "default": "",
+            "in": "query",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "offset",
+            "default": "",
+            "in": "query",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "limit",
+            "default": "",
+            "in": "query",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "Api-Version",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "default": "1",
+            "description": "Api-Version"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {}
+          }
+        }
+      }
+    },
+    "/bookings": {
+      "get": {
+        "summary": "List Bookings",
+        "description": "List Bookings",
+        "operationId": "ListBookings",
+        "parameters": [
+          {
+            "name": "modified_gte",
+            "in": "query",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "modified_lt",
+            "in": "query",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "status",
+            "in": "query",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "trip_id",
+            "in": "query",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "offset",
+            "in": "query",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "limit",
+            "in": "query",
+            "type": "string",
+            "required": false
+          },
+          {
+            "name": "Api-Version",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "default": "1",
+            "description": "Api-Version"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {}
+          }
+        }
+      }
+    },
+    "/suppliers": {
+      "get": {
+        "summary": "List Suppliers",
+        "description": "List Suppliers",
+        "operationId": "ListSuppliers",
+        "parameters": [
+          {
+            "name": "limit",
+            "default": "10",
+            "in": "query",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "offset",
+            "default": "0",
+            "in": "query",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "Api-Version",
+            "in": "header",
+            "required": true,
+            "type": "string",
+            "default": "1",
+            "description": "Api-Version"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": "default",
+            "schema": {}
+          }
+        }
+      }
+    }
+  },
+  "definitions": {},
+  "parameters": {},
+  "responses": {},
+  "securityDefinitions": {
+    "oauth2-auth": {
+      "type": "oauth2",
+      "flow": "accessCode",
+      "authorizationUrl": "https://app.sandbox-travelperk.com/oauth2/authorize",
+      "tokenUrl": "https://app.sandbox-travelperk.com/accounts/oauth2/token/",
+      "scopes": {
+        "bookings:read trips:read users:read expenses:read": "bookings:read trips:read users:read expenses:read"
+      }
+    }
+  },
+  "security": [
+    {
+      "oauth2-auth": [
+        "bookings:read trips:read users:read expenses:read"
+      ]
+    }
+  ],
+  "tags": []
+}
